@@ -8,6 +8,8 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.pt.Dado;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.HomePage;
 
 
@@ -135,6 +137,14 @@ public class HomeSteps {
 
 
 
+
+    }
+
+    @And("click button show Tasks")
+    public void clickButtonShowTasks() {
+
+        homePage.clickbtnVerTarefas();
+
     }
 
 
@@ -143,6 +153,22 @@ public class HomeSteps {
 
 
         homePage.clickViewTasks();
+
+
+
+
+
+    }
+
+    @And("printT and export task")
+    public void printTAndExportTask() {
+
+
+        //homePage.clickExportExcel();
+        homePage.clickprintTasks();
+        homePage.selectTask();;
+        //homePage.clickbtnShowselecteds() ;
+        homePage.clickNumberTask();
 
 
 
@@ -156,6 +182,19 @@ public class HomeSteps {
         homePage.clickMenuMchangeLog();
 
 
+    }
+
+    @Then("valid Text message change log screen {string}")
+    public void validTextMessageChangeLogScreen(String msgText) {
+
+
+        homePage.clickMenuMchangeLog();
+        homePage.getTexmsgTextoRejistroMudança( );
+        Assert.assertEquals(msgText,homePage.getTexmsgTextoRejistroMudança( ));
+
+        System.out.println("------------------------------------------------------------");
+        System.out.println(homePage.getTexmsgTextoRejistroMudança());
+        System.out.println("------------------------------------------------------------");
 
     }
 
@@ -167,11 +206,54 @@ public class HomeSteps {
         homePage.clickMenuPlanning();
 
 
+
+    }
+
+    @Then("valid Text message planning screen {string}")
+    public void validTextMessagePlanningScreen(String msgText) {
+
+        homePage.getTexmsgTextoPlanejamento( );
+        Assert.assertEquals(msgText,homePage.getTexmsgTextoPlanejamento( ));
+
+        System.out.println("------------------------------------------------------------");
+        System.out.println(homePage.getTexmsgTextoRejistroMudança());
+        System.out.println("------------------------------------------------------------");
+
     }
 
 
+    @Then("click show tasks")
+    public void clickShowTask() {
+
+        homePage.clickbtnVerTarefas();
+
+    }
+
+    @Then("search number Task {string}")
+    public void searchNumberTask(String numTask) {
+
+       homePage.setinputNumTaskSearch(numTask);
 
 
+    }
+
+    @And("click search")
+    public void clickeSarch() {
+
+        homePage.clickSearch();
+
+
+    }
+    @Then("validate num task resul search {string}")
+    public void validateNumTaskResulSearch(String numTask) {
+
+        homePage.getValueNumTaskSearch();
+        Assert.assertEquals(numTask,homePage.getValueNumTaskSearch());
+
+        System.out.println("------------------------------------------------------------");
+        System.out.println(homePage.getValueNumTaskSearch());
+        System.out.println("------------------------------------------------------------");
+    }
 
 
 

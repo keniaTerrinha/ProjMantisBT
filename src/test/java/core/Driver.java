@@ -230,8 +230,13 @@ public class Driver {
     }
 
 
-
-
+    public static void scrollPageDownSreenPrint() {
+        Driver.waitMillisSeconds(3000);
+        String elemento = "//input[@type='submit']";
+        Driver.visibilityOf(driver.findElement(By.xpath(elemento)));
+        WebElement el = driver.findElement(By.xpath(elemento));
+        executarJS("window.scrollBy(0, arguments[100])", el.getLocation().y);
+    }
     public static void scrollPageDown() {
         Driver.waitMillisSeconds(3000);
         String elemento = "//*[@id='main-container']/div[2]";

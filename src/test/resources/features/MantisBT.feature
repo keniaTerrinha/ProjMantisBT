@@ -1,46 +1,10 @@
-
+@regressivo
   Feature:MantisBT
 
   Background:
     Given that it the user are home page
     When Enter username and password "kenia.terrinha" and "Kenia@06!"
     And click on button login
-
-
-@regressivo
-  Scenario Outline: Access login successfully <identification>
-    Then valid user page <username>
-    Then valid page title <titlePage>
-
-    Examples:
-      | identification | username            |titlePage |
-      | successfully   | "kenia.terrinha"    | "MantisBT"|
-      | successfully   | "kenia.terrinha"    | "MantisBT"|
-
-
-
-
-    Scenario Outline: Access login unsuccessfully <identification>
-
-      Then valid password invalid <msg>
-
-
-
-      Examples:
-        | identification                       | username         | password    |msg |
-        | unsuccessfully username              | "camila.Jesus"   | "Kenia@06!" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
-        | unsuccessfully password              | "kenia.terrinha" | "Test@2023" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
-        | unsuccessfully username and password | "camila.Jesus"   | "Test@2023" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
-
-
-
-
-    Scenario: Exit my account
-      And click on my account
-      Then click on exit
-
-
-
 
 
     Scenario Outline: Access my account <identification>
@@ -63,26 +27,17 @@
 
 
 
-    Scenario Outline: access my view <identification>
+    Scenario: access my view
       Then click in menu opcion my view
 
 
-      Examples:
-        | identification | username         | password    |titlePage |
-        | successfully   | "" | "" | ""|
 
-
-
-
-
-    Scenario Outline: access view tasks<identification>
+    Scenario: access view tasks
 
       Then click in menu opcion view tasks
+      And printT and export task
 
 
-      Examples:
-        | identification | username         | password    |titlePage |
-        | successfully   | "" | "" | ""|
 
 
 
@@ -115,15 +70,29 @@
 
 
 
+    Scenario Outline: search task <identification>
+       Then search number Task <numTask>
+       And click search
+
+
+
+      Examples:
+        | identification                     | numTask            |
+        |  successfully                      | "0000203"          |
+        |  unsuccessfully without for zero   | "203"              |
+        |  unsuccessfully without for zero   | "200"               |
+
+
     Scenario Outline: access change log <identification>
 
 
       Then click in menu opcion change log
 
 
+
       Examples:
-        | identification | username         | password    |titlePage |
-        | successfully   | "" | "" | ""|
+        | identification | msgText                                      |
+        | successfully   | "No Change Log information available" |
 
 
 
@@ -133,6 +102,9 @@
       Then click in menu opcion planning
 
 
+
       Examples:
-        | identification | username         | password    |titlePage |
-        | successfully   | "" | "" | ""|
+        | identification | msgText                            |
+        | successfully   | "No Roadmap information available" |
+
+

@@ -120,8 +120,6 @@ public class HomePage {
 
 
 
-
-
     public HomePage clickBtnUpdateUser() {
 
         Driver.visibilityOf(homeMap.btnUpdateUser);
@@ -201,15 +199,111 @@ public class HomePage {
         return this;
     }
 
-
-
-
     public HomePage clickMenuPlanning() {
 
         Driver.visibilityOf(homeMap.planning);
         homeMap.planning.click();
         return this;
     }
+
+
+
+    public HomePage clickprintTasks() {
+
+       Driver.waitMillisSeconds(2000);
+        Driver.visibilityOf(homeMap.printTasks);
+        homeMap.printTasks.click();
+        return this;
+    }
+
+
+    public HomePage clickExportExcel() {
+
+        Driver.visibilityOf(homeMap.exportExcel);
+        homeMap.exportExcel.click();
+        return this;
+    }
+
+
+
+    public HomePage selectTask() {
+
+        Driver.visibilityOf(homeMap.selectTask);
+        homeMap.selectTask.click();
+        return this;
+    }
+
+    public HomePage clickbtnShowselecteds() {
+        Driver.scrollPageDownSreenPrint();
+        Driver.visibilityOf(homeMap.btnshowselecteds);
+        homeMap.btnshowselecteds.click();
+        return this;
+    }
+
+
+
+
+    public HomePage clickNumberTask() {
+
+        Driver.visibilityOf(homeMap. numberTask);
+        homeMap. numberTask.click();
+        return this;
+    }
+
+
+    public HomePage getTexmsgTextoRejistroMudança( ) {
+
+        Driver.visibilityOf(homeMap.msgTextoRejistroMudança);
+        homeMap.msgTextoRejistroMudança.getText();
+
+        return this;
+
+    }
+
+
+    public HomePage getTexmsgTextoPlanejamento( ) {
+
+        Driver.visibilityOf(homeMap.msgTextoPlanejamento);
+        homeMap.msgTextoPlanejamento.getText();
+
+        return this;
+
+    }
+
+
+
+    public HomePage clickbtnVerTarefas() {
+
+        Driver.visibilityOf(homeMap.btnVerTarefas);
+        homeMap.btnVerTarefas.click();
+        return this;
+    }
+
+
+
+    public void setinputNumTaskSearch(String numTask) {
+        Driver.visibilityOf(homeMap.inputNumTaskSearch);
+        homeMap.inputNumTaskSearch.clear();
+        homeMap.inputNumTaskSearch.sendKeys(numTask);
+    }
+
+
+    public void clickSearch(){
+        Driver.visibilityOf(homeMap.inputNumTaskSearch);
+        homeMap.inputNumTaskSearch.click();
+
+    }
+
+    public HomePage getValueNumTaskSearch(){
+        Driver.visibilityOf(homeMap.validNumTaskSearch);
+        homeMap.validNumTaskSearch.getText();
+        return this;
+    }
+
+
+
+
+
 
 }
 

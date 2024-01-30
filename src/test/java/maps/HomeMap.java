@@ -95,15 +95,45 @@ public class HomeMap {
 
 
 
+    @FindBy(xpath = "//a[@href='print_all_bug_page.php']")
+    public WebElement printTasks;
+
+    @FindBy(xpath = "//a[@href='excel_xml_export.php']")
+    public WebElement exportExcel;
+
+    @FindBy(xpath = "(//span[contains(@class,'lbl')])[1]")
+    public WebElement selectTask;
+
+    @FindBy(xpath = "//*[@id='buglist']/tbody[2]/tr[15]/td/input[2]")
+    public WebElement btnshowselecteds;
+
+    @FindBy(xpath = "//a[@href='/view.php?id=203']")
+    public WebElement numberTask;
+
+
+    @FindBy(xpath = "//p[@class='lead']p")
+    public WebElement msgTextoRejistroMudança;
 
 
 
+    @FindBy(xpath = "//p[@class='lead']")
+    public WebElement msgTextoPlanejamento;
 
 
 
+    @FindBy(xpath = "//*[@id='reported']/div[1]/div[2]]")
+    public WebElement btnVerTarefas;
+    @FindBy(xpath = "//input[contains(@name,'bug_id')]")
+    public WebElement inputNumTaskSearch;
+
+    @FindBy(xpath = "//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[1]")
+    public WebElement validNumTaskSearch;
 
 
-
+    @FindBy(xpath = "//*[@id='main-container']/div[2]/div/div[2]/div/a")
+    public WebElement acessNegadoProceedBtn;
+    @FindBy(xpath = "//*[@id='main-container']/div[2]/div/div[2]/p")
+  public WebElement acessNegadoRseultSurch;
 
 
 

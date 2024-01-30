@@ -133,10 +133,14 @@ public class HomeMap {
     @FindBy(xpath = "//*[@id='main-container']/div[2]/div/div[2]/div/a")
     public WebElement acessNegadoProceedBtn;
     @FindBy(xpath = "//*[@id='main-container']/div[2]/div/div[2]/p")
-  public WebElement acessNegadoRseultSurch;
+    public WebElement acessNegadoRseultSurch;
 
 
+    @FindBy(xpath = "//p[@class='bold bigger-110'][contains(.,'Access Denied.')]")
+    public WebElement msgAccessDenied;
 
+    @FindBy(xpath = "//a[@href='my_view_page.php']")
+    public WebElement btnProceed;
 
 
 }

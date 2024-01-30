@@ -237,14 +237,14 @@ public class HomeSteps {
 
     }
 
-    @And("click search")
-    public void clickeSarch() {
+    @And("click search {string}")
+    public void clickeSarch(String msg) {
 
         homePage.clickSearch();
-
+        homePage.checkmsgError();
 
     }
-    @Then("validate num task resul search {string}")
+    @Then("validate num task result search {string}")
     public void validateNumTaskResulSearch(String numTask) {
 
         homePage.getValueNumTaskSearch();

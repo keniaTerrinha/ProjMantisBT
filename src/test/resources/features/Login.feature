@@ -22,15 +22,16 @@
     Scenario Outline: Access login unsuccessfully <identification>
     When Enter username and password <username> and <password>
       And click on button login
-      Then valid password invalid
+      Then valid password invalid <msg>
 
 
 
       Examples:
-        | identification                       | username         | password    |
-        | unsuccessfully username              | "camila.Jesus"   | "Kenia@06!" |
-        | unsuccessfully password              | "kenia.terrinha" | "Test@2023" |
-        | unsuccessfully username and password | "camila.Jesus"   | "Test@2023" |
+        | identification                       | username         | password    |msg |
+        | unsuccessfully username              | "camila.Jesus"   | "Kenia@06!" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
+        | unsuccessfully password              | "kenia.terrinha" | "Test@2023" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
+        | unsuccessfully username and password | "camila.Jesus"   | "Test@2023" |"Your account may be disabled or blocked or the username/password you entered is incorrect."    |
+
 
 
 

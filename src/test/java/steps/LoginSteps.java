@@ -50,15 +50,15 @@ public class LoginSteps {
 
 
 
-    @Then("valid password invalid")
-    public void validPasswordInvalid() {
+    @Then("valid password invalid {string}")
+    public void validPasswordInvalid(String msg) {
 
         loginPage = new LoginPage();
-//        loginPage.msgloginInvalid();
-//        Assert.assertEquals(msg, loginPage.msgloginInvalid());
-//        System.out.println("------------------------------------------------------------");
-//        System.out.println(loginPage.msgloginInvalid());
-//        System.out.println("------------------------------------------------------------");
+        loginPage.msgloginInvalid();
+        Assert.assertEquals(msg, loginPage.msgloginInvalid());
+        System.out.println("------------------------------------------------------------");
+        System.out.println(loginPage.msgloginInvalid());
+        System.out.println("------------------------------------------------------------");
 
     }
 
@@ -75,7 +75,6 @@ public class LoginSteps {
         System.out.println("------------------------------------------------------------");
 
     }
-
 
 
 

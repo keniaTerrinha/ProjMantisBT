@@ -139,8 +139,25 @@ public class HomePage {
 
 
     }
-    public void
-    checkAuthenticationRequest(String realNameCurrent) {
+
+
+
+    public void checkmsgError() {
+
+        if (validExistsmsgAccessDenied() == true) {
+            clickbtnProceed();
+
+
+
+        } else {
+
+
+            System.out.println("Search with successfully");
+        }
+
+    }
+
+    public void checkAuthenticationRequest(String realNameCurrent) {
 
         if (existstAuthenticate() == true) {
             clickBtnLogin();
@@ -300,6 +317,28 @@ public class HomePage {
         return this;
     }
 
+    public HomePage getTextmsgAccessDenied(){
+        Driver.visibilityOf(homeMap.msgAccessDenied);
+        homeMap.msgAccessDenied.getText();
+        return this;
+    }
+
+    public boolean validExistsmsgAccessDenied(){
+
+        try {
+            Driver.visibilityOf(homeMap.msgAccessDenied);
+            homeMap.msgAccessDenied.isDisplayed();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickbtnProceed(){
+        Driver.visibilityOf(homeMap.btnProceed);
+        homeMap.btnProceed.click();
+
+    }
 
 
 

@@ -72,15 +72,15 @@
 
     Scenario Outline: search task <identification>
        Then search number Task <numTask>
-       And click search
+       And click search <msg>
 
 
 
       Examples:
-        | identification                     | numTask            |
-        |  successfully                      | "0000203"          |
-        |  unsuccessfully without for zero   | "203"              |
-        |  unsuccessfully without for zero   | "200"               |
+        | identification                               | numTask            |msg              |
+        |  successfully                                | "0000203"          |""               |
+        |  unsuccessfully without the first 4 digits   | "203"              |""               |
+        |  unsuccessfully just two digits              | "03"               |"Access Denied"  |
 
 
     Scenario Outline: access change log <identification>
